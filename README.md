@@ -31,3 +31,18 @@ The parallelization was implemented using Python’s **multiprocessing** module:
 - **Overhead of Multiprocessing:** Since the dataset we used was relatively small, the spawning of multiple processes and managing the communication between these processes led to a slower execution time. Parallel processing works better with larger datasets to maximize the chunk management.
 
 ---
+## **Project Overview**
+
+This project analyzes a diabetes dataset to identify patients with diabetes, calculate their average blood glucose levels, and determine the top 10 patients with the highest BMI. The project compares sequential and parallel data processing methods to evaluate performance differences and understand the benefits and limitations of parallelization.
+
+---
+
+## **Tools and Technologies Used**
+
+- **Programming Language:** Python 3.13.7  
+- **Libraries:**  
+  - pandas – for data manipulation and analysis  
+  - multiprocessing – for parallel computation  
+  - time – to measure execution performance  
+- **Development Environment:** Google Colab  
+- **Dataset:** diabetes_dataset.csv containing patient demographics, medical history, and lab results
