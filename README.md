@@ -21,3 +21,13 @@ The parallelization was implemented using Python’s **multiprocessing** module:
 **Result Aggregation:** The results from all chunks were combined to compute the overall mean glucose and the top 10 BMI records across all chunks. Aggregation is very crucial as it is done to avoid missing any records, which ensures that the output is accurate and reliable.
 
 ---
+
+## **Challenges Encountered**
+
+- **Jupyter Not Working:** The main challenge we faced in this project was the actual execution of the parallel processing. Initially, we used Jupyter in running the code, but every time it comes to parallel processing code, the cell never completes and just runs infinitely. We tried to fix the code for the parallel section and unfortunately, the problem still exists. But when we switched to Google Colab, it immediately worked out fine and the parallel processing was executed without any errors. The disparity in performance occurs because Google Colab operates on a Linux-based environment that uses the fork method to create instant memory copies for worker processes, whereas local Windows or macOS Jupyter instances use the more resource-heavy spawn method. This local "spawn" approach requires a clean re-import of the entire script for every CPU core, which often triggers deadlocks or infinite loops if the notebook structure isn't perfectly isolated. Consequently, Colab’s streamlined process management avoids the "zombie processes" and memory overhead that cause local machines to hang during intensive data pickling.
+
+- **Limited CPU Cores:**  Yhe program ran only on a system with only 2 processors, which limited the potential speedup of the program. Parallel processing is known to work better with a higher number of processors.  
+
+- **Overhead of Multiprocessing:** Since the dataset we used was relatively small, the spawning of multiple processes and managing the communication between these processes led to a slower execution time. Parallel processing works better with larger datasets to maximize the chunk management.
+
+---
