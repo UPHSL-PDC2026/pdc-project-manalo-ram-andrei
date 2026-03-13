@@ -60,3 +60,24 @@ This project analyzes a diabetes dataset to identify patients with diabetes, cal
   - time – to measure execution performance  
 - **Development Environment:** Google Colab  
 - **Dataset:** diabetes_dataset.csv containing patient demographics, medical history, and lab results
+
+---
+
+## **Instructions for Running the Project**
+
+1. **Install Dependencies:** Ensure Python 3.7+ is installed along with the required libraries.  
+2. **Place Dataset:** Ensure the diabetes_dataset.csv file is in the same directory as the Python script or notebook.  
+3. **Run Sequential Code:** Execute the sequential computation function to see average glucose levels and top 10 BMI records.  
+4. **Run Parallel Code:** Execute the parallel computation function to see results computed using multiprocessing.  
+5. **Compare Performance:** Execution times, speedup, and efficiency are printed automatically for comparison.
+
+## **Project Team**
+
+| **Name**       | **Role**                          |
+|----------------|----------------------------------|
+| Follante, Adrian Paolo S.    | Project Lead / Python Developer  |
+| Manalo, Ram Andrei M.    | Data Analyst / Dataset Preparation / Documentation |
+| Ramos, Renzo Emmanuel V.    | Python Developer / Report Writer / Documentation     |
+| Rivera, France Raphael S.   | Testing & Performance Evaluation  |
+| Torculas, Richard O.   | Report Writer / Documentation  |
+
