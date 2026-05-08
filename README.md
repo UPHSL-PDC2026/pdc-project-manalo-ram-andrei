@@ -15,7 +15,7 @@ The project’s performance evaluation shows that the sequential implementation 
 
 Despite the slower execution time in this project, the distributed approach shows its potential for handling large amounts of data and processing tasks. The additional overhead that comes from using Apache Spark can become justified and more helpful when we work with significantly larger datasets or more complex analytical tasks and operations. In conclusion, while sequential processing is optimal for small datasets like in this project, distributed computing still remains essential in big data environments.
 
-## **Scalability Benefits and Limitations **
+## **Scalability Benefits and Limitations**
 
 Distributed computing frameworks such as Apache Spark provide significant scalability benefits by allowing data processing to be distributed across multiple nodes. This enables the system to handle large datasets efficiently by dividing the workload into smaller partitions that can be processed in parallel. As data volume increases, additional computational resources can be added to maintain performance, making distributed systems highly suitable for big data applications and real-time analytics.
 
