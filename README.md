@@ -1,5 +1,34 @@
 # **Technical Report**
 
+## **System Architecture Diagram**
+
+The system architecture for this project follows a layered approach consisting of data input, processing, and output components. At the input layer, the dataset is loaded from a CSV file into different processing environments, including pandas for sequential execution, multiprocessing for parallel execution, and Apache Spark for distributed processing. Each environment serves as a separate execution model, which allows for direct comparison of performance and scalability across implementations.
+
+The processing layer handles the data analytics, including filtering records with diabetes, computing the average blood glucose level, and retrieving the top 10 records based on BMI. In the distributed execution, Apache Spark divides the dataset into partitions and processes them across worker nodes, enabling parallel computation at scale. Finally, the output layer consolidates the results and presents them through printed outputs and comparison tables, which enables evaluation of execution time across all approaches.
+
+<img width="1120" height="1520" alt="PDC" src="https://github.com/user-attachments/assets/c404e066-ae7a-4d23-87a3-7b8e47f7981b" />
+
+
+## **Performance Evaluation**
+
+The project’s performance evaluation shows that the sequential implementation achieved the fastest execution time with approximately 0.0065 seconds, followed by the parallel execution with 0.061 seconds, while the distributed execution using Apache Spark recorded the slowest performance with 2.45 seconds. This result happened due to the relatively small dataset size that was used, which only contains 100,000 rows, and the simplicity or uncomplicated operations performed on the data, such as filtering, averaging, and sorting. Because of this, the overhead that came from the multiprocessing and distributed performance outweighed the computational benefits, which led to slower execution times. 
+
+Despite the slower execution time in this project, the distributed approach shows its potential for handling large amounts of data and processing tasks. The additional overhead that comes from using Apache Spark can become justified and more helpful when we work with significantly larger datasets or more complex analytical tasks and operations. In conclusion, while sequential processing is optimal for small datasets like in this project, distributed computing still remains essential in big data environments.
+
+## **Scalability Benefits and Limitations **
+
+Distributed computing frameworks such as Apache Spark provide significant scalability benefits by allowing data processing to be distributed across multiple nodes. This enables the system to handle large datasets efficiently by dividing the workload into smaller partitions that can be processed in parallel. As data volume increases, additional computational resources can be added to maintain performance, making distributed systems highly suitable for big data applications and real-time analytics.
+
+However, this scalability comes with certain limitations, particularly for small datasets like the one used in this project. The overhead associated with initializing distributed systems, managing task scheduling, and coordinating between nodes can negatively impact the performance when the workload is not relatively large. In this project, the dataset size was not large enough to benefit from distributed processing, which resulted in slower execution times compared to the sequential approach. This highlights that scalability benefits are highly dependent on the size and complexity of the data being processed.
+
+
+## **Ethical and Professional Considerations**
+
+The use of health-related datasets, such as diabetes records, raises important ethical considerations regarding data privacy and responsible usage. Even though the dataset used in this project does not include personally identifiable information, it is important to ensure that sensitive health data is handled securely and stored properly. Unauthorized access or misuse of such data can lead to privacy violations and ethical concerns, which emphasizes the need for secure data storage and controlled access.
+
+In addition, responsible data usage requires careful interpretation of results to avoid bias or misleading conclusions. Factors such as gender, age, or location should not be used to generalize or discriminate against specific groups. Analysts must ensure that insights derived from the data are used ethically and for beneficial purposes, such as improving healthcare outcomes or informing research. Maintaining transparency, fairness, and accountability in data processing is essential in upholding professional standards in data science and computing.
+
+
 ## **Problem Description**
 
 The objective of this study was to analyze a diabetes dataset containing patient records, including attributes such as **age, gender, BMI, blood glucose level, and diabetes status**. The goal was to compare sequential and parallel processing approaches in terms of execution time, speedup, and efficiency. The specific tasks were to:
